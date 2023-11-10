@@ -1,5 +1,5 @@
-import 'package:al_hadith/ui/uitility/custom_size_extention.dart';
-import 'package:al_hadith/ui/uitility/style.dart';
+import 'package:al_hadith/ui/utility/custom_size_extention.dart';
+import 'package:al_hadith/ui/utility/style.dart';
 import 'package:flutter/material.dart';
 
 class SearchBarWidget extends StatelessWidget {

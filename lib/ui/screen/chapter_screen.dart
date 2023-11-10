@@ -1,9 +1,10 @@
-import 'package:al_hadith/controller/chapter_controller.dart';
+
+import 'package:al_hadith/data/controller/chapter_controller.dart';
 import 'package:al_hadith/ui/widgets/text_component.dart';
 
-import 'package:al_hadith/ui/uitility/assets_path.dart';
-import 'package:al_hadith/ui/uitility/custom_size_extention.dart';
-import 'package:al_hadith/ui/uitility/style.dart';
+import 'package:al_hadith/ui/utility/assets_path.dart';
+import 'package:al_hadith/ui/utility/custom_size_extention.dart';
+import 'package:al_hadith/ui/utility/style.dart';
 import 'package:al_hadith/ui/widgets/searchBar_widget.dart';
 
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class _ChapterScreenState extends State<ChapterScreen> {
       Get.find<ChapterController>().fetchChapterListData(id: widget.bookId);
     });
 
-    print("========>${widget.bookId}");
+  //  print("========>${widget.bookId}");
     super.initState();
   }
 
@@ -45,7 +46,7 @@ class _ChapterScreenState extends State<ChapterScreen> {
             child: GetBuilder<ChapterController>(
               builder: (_chapterController) {
                 if(_chapterController.chapterList.isEmpty){
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 }
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,10 +94,8 @@ class _ChapterScreenState extends State<ChapterScreen> {
             child: Padding(
               padding:  EdgeInsets.all(16.rh),
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.center,
-                // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SearchBarWidget(),
+                  const SearchBarWidget(),
                   SizedBox(height: 16.rh,),
                   GetBuilder<ChapterController>(
                     builder: (_chapterController) {

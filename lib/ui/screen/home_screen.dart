@@ -1,9 +1,10 @@
-import 'package:al_hadith/controller/book_controller.dart';
 
+
+import 'package:al_hadith/data/controller/book_controller.dart';
 import 'package:al_hadith/ui/screen/chapter_screen.dart';
-import 'package:al_hadith/ui/uitility/assets_path.dart';
-import 'package:al_hadith/ui/uitility/custom_size_extention.dart';
-import 'package:al_hadith/ui/uitility/style.dart';
+import 'package:al_hadith/ui/utility/assets_path.dart';
+import 'package:al_hadith/ui/utility/custom_size_extention.dart';
+import 'package:al_hadith/ui/utility/style.dart';
 import 'package:al_hadith/ui/widgets/carousel_slider_widget.dart';
 import 'package:al_hadith/ui/widgets/text_component.dart';
 

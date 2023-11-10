@@ -1,4 +1,5 @@
 
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/services.dart';
@@ -9,7 +10,9 @@ class DatabaseHelper {
   static Database? _database;
 
   Future<Database> get database async {
-    if (_database != null) return _database!;
+    if (_database != null) {
+      return _database!;
+    }
 
     _database = await initDatabase();
     return _database!;
@@ -22,21 +25,10 @@ class DatabaseHelper {
     final exist = await databaseExists(path);
     print(databaseExists(path).toString());
     if(exist){
-      print("===================>object");
+      log("{===================>Database exist}");
     }else{
-      print("===================>no");
+      log("{===================>Database not exist}");
     }
-    // // Copy the database from assets if it doesn't exist
-    // if (await databaseExists(path)) {
-    //   await deleteDatabase(path); // Optional: Update database if needed
-    // }
-    //
-    // ByteData data = await rootBundle.load('assets/hadith_bn_test.db');
-    // List<int> bytes = data.buffer.asUint8List();
-    // await File(path).writeAsBytes(bytes, flush: true);
-
-
-
     // Check if the database file exists
     if (!await databaseExists(path)) {
       ByteData data = await rootBundle.load('assets/hadith_bn_test.db');
@@ -44,8 +36,6 @@ class DatabaseHelper {
       await File(path).writeAsBytes(bytes, flush: true);
     }
 
-
-    //return await openDatabase(path, version: 1, readOnly: true);
     return await openDatabase(path, version: 1, readOnly: false);
 
   }

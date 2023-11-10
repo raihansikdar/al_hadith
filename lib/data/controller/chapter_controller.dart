@@ -1,7 +1,7 @@
 import 'dart:developer';
 
-import 'package:al_hadith/data/chapter_model.dart';
-import 'package:al_hadith/database/database_helper.dart';
+import 'package:al_hadith/domain/database/database_helper.dart';
+import 'package:al_hadith/domain/models/chapter_model.dart';
 import 'package:get/get.dart';
 
 class ChapterController extends GetxController {
@@ -16,7 +16,7 @@ class ChapterController extends GetxController {
 
     final db = await DatabaseHelper().database;
     final results = await db.query('chapter', where: 'book_id = ?', whereArgs: [id]);
-   // log(results.toString());
+    log(results.toString());
     _isLoading = false;
     update();
 
@@ -35,23 +35,3 @@ class ChapterController extends GetxController {
   }
 }
 
-
-/*
-* class ChapterController extends GetxController {
-  var chapterList = <ChapterModel>[].obs;
-  bool _isChapterInProgress = fasle;
-
-  @override
-  void onInit() {
-    super.onInit();
-    fetchData();
-  }
-
-  void fetchData() async {
-    final db = await DatabaseHelper().database;
-    final results = await db.query('chapter');
-    chapterList.value = results.map((e) => ChapterModel.fromJson(e)).toList();
-  }
-}
-
-* */

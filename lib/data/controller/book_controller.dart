@@ -2,9 +2,9 @@
 
 import 'dart:developer';
 
-import 'package:al_hadith/data/book_model.dart';
 
-import 'package:al_hadith/database/database_helper.dart';
+import 'package:al_hadith/domain/database/database_helper.dart';
+import 'package:al_hadith/domain/models/book_model.dart';
 import 'package:get/get.dart';
 
 class BookController extends GetxController {
@@ -21,7 +21,7 @@ class BookController extends GetxController {
 
     final db = await DatabaseHelper().database;
     final results = await db.query('books');
-    //log(results.toString());
+    log(results.toString());
     _isLoading = false;
 
 

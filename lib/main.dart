@@ -1,5 +1,5 @@
 
-import 'package:al_hadith/application.dart';
+import 'package:al_hadith/application/app.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
