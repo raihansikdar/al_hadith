@@ -23,7 +23,7 @@ class DatabaseHelper {
     final path = join(databasesPath, 'hadith_bn_test.db');
 
     final exist = await databaseExists(path);
-    print(databaseExists(path).toString());
+  
     if(exist){
       log("{===================>Database exist}");
     }else{

@@ -1,11 +1,10 @@
-
 import 'package:al_hadith/data/controller/chapter_controller.dart';
-import 'package:al_hadith/ui/widgets/text_component.dart';
+import 'package:al_hadith/presentation/utility/assets_path.dart';
+import 'package:al_hadith/presentation/utility/custom_size_extention.dart';
+import 'package:al_hadith/presentation/utility/style.dart';
+import 'package:al_hadith/presentation/widgets/searchBar_widget.dart';
+import 'package:al_hadith/presentation/widgets/text_component.dart';
 
-import 'package:al_hadith/ui/utility/assets_path.dart';
-import 'package:al_hadith/ui/utility/custom_size_extention.dart';
-import 'package:al_hadith/ui/utility/style.dart';
-import 'package:al_hadith/ui/widgets/searchBar_widget.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

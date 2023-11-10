@@ -1,5 +1,5 @@
-import 'package:al_hadith/ui/utility/custom_size_extention.dart';
-import 'package:al_hadith/ui/utility/style.dart';
+import 'package:al_hadith/presentation/utility/custom_size_extention.dart';
+import 'package:al_hadith/presentation/utility/style.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -21,18 +21,15 @@ class CarouselSliderWidget extends StatelessWidget {
         height: 150.rh,
         autoPlay: true,
         viewportFraction: 1,
-        autoPlayInterval: Duration(seconds: 3),
-        autoPlayAnimationDuration: Duration(milliseconds: 800),
+        autoPlayInterval: const Duration(seconds: 3),
+        autoPlayAnimationDuration: const Duration(milliseconds: 800),
       ),
       items: title.map((i) {
         return Builder(
           builder: (BuildContext context) {
             return Container(
                 width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.symmetric(horizontal: 5.0),
-                // decoration: BoxDecoration(
-                //     color: Colors.amber
-                // ),
+                margin: const EdgeInsets.symmetric(horizontal: 5.0),
                 child: Padding(
                   padding:  EdgeInsets.only(top: 0,left: 16.rh,right: 16.rh,bottom: 0),
                   child: Text(
