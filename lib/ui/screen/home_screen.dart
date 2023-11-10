@@ -1,13 +1,13 @@
 import 'package:al_hadith/controller/book_controller.dart';
-import 'package:al_hadith/data/book_model.dart';
+
 import 'package:al_hadith/ui/screen/chapter_screen.dart';
 import 'package:al_hadith/ui/uitility/assets_path.dart';
 import 'package:al_hadith/ui/uitility/custom_size_extention.dart';
 import 'package:al_hadith/ui/uitility/style.dart';
 import 'package:al_hadith/ui/widgets/carousel_slider_widget.dart';
 import 'package:al_hadith/ui/widgets/text_component.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
+import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -35,12 +35,15 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         leading: SvgPicture.asset(AssetsPath.menuSVG),
         centerTitle: true,
-        title: TextComponent(
-          text: 'Al Hadith',
-          color: AppColors.whiteColor,
-          fontSize: Constants.appbarTitleSize,
-          fontWeight: Constants.titleFontWeight,
-          height: 0.04,
+        title: Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: TextComponent(
+            text: 'Al Hadith',
+            color: AppColors.whiteColor,
+            fontSize: Constants.appbarTitleSize,
+            fontWeight: Constants.titleFontWeight,
+            height: 0.04,
+          ),
         ),
         actions: [
           Padding(
@@ -54,18 +57,40 @@ class _HomePageState extends State<HomePage> {
         children: [
           Container(
             height: 400.rh,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  AssetsPath.islamicCalligraphyPNG,
+                ),
+                fit: BoxFit.cover,
+                // colorFilter: ColorFilter.mode(
+                //   AppColors.whiteColor,
+                //   BlendMode.modulate,
+                // ),
+              ),
+            ),
             child: Stack(
               children: [
-
                 Container(
                   height: 350.rh,
                   width: double.infinity,
                   decoration:  BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(
+                          AssetsPath.mosquePNG,
+                        ),
+                        fit: BoxFit.cover,
+                      colorFilter: ColorFilter.mode(
+                        AppColors.primaryColor.withOpacity(.2),
+                        BlendMode.modulate,
+                      ),
+                    ),
                     borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(30.rh),
-                      bottomRight: Radius.circular(30.rh),
+                      bottomLeft: Radius.circular(20.rh),
+                      bottomRight: Radius.circular(20.rh),
                     ),
                     color: AppColors.primaryColor,
+                   
                   ),
                   child: CarouselSliderWidget(),
                 ),
@@ -85,10 +110,23 @@ class _HomePageState extends State<HomePage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              SvgPicture.asset(AssetsPath.clockSVG),
-                              SvgPicture.asset(AssetsPath.goSVG),
-                              SvgPicture.asset(AssetsPath.appSVG),
-                              SvgPicture.asset(AssetsPath.heartSVG),
+                              FadeInImage(
+                                placeholder: AssetImage(AssetsPath.clockPNG),
+                                image: AssetImage(AssetsPath.clockPNG),
+                              ),
+                              FadeInImage(
+                                placeholder: AssetImage(AssetsPath.goPNG),
+                                image: AssetImage(AssetsPath.goPNG),
+                              ),
+                              FadeInImage(
+                                placeholder: AssetImage(AssetsPath.appPNG),
+                                image: AssetImage(AssetsPath.appPNG),
+                              ),
+                              FadeInImage(
+                                placeholder: AssetImage(AssetsPath.heartPNG),
+                                image: AssetImage(AssetsPath.heartPNG),
+                              ),
+
                             ],
                           ),
                         ),
@@ -137,20 +175,21 @@ class _HomePageState extends State<HomePage> {
                                 left: 0,
                                 top: 0,
                                 child: Container(
-                                  width: 46.rh,
-                                  height: 46.rh,
-                                  decoration: const ShapeDecoration(
-                                    color: Color(0xFF19A382),
-                                    shape: StarBorder.polygon(
-                                      sides: 6,
-
-                                    ),
-                                  ),
-                                ),
+                          width: 46.rh,
+                            height: 46.rh,
+                            decoration: ShapeDecoration(
+                              color: _bookController.bookList[index].colorCode != null
+                                  ? HexColor(_bookController.bookList[index].colorCode!)
+                                  : Colors.transparent,
+                              shape: StarBorder.polygon(
+                                sides: 6,
                               ),
+                            ),
+                          ),
+                        ),
                                Center(
                                  child: Padding(
-                                   padding:  EdgeInsets.only(top: 10.rh),
+                                   padding:  EdgeInsets.only(top: 14.rh),
                                    child: TextComponent(
                                         text: _bookController.bookList[index].abvrCode ?? '',
                                         color: AppColors.whiteColor,
