@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> {
               }
               return SingleChildScrollView(
                 child: SizedBox(
-                  height: 250.rh,
+                  height: 240.rh,
                   child: ListView.separated(
                     shrinkWrap: true,
                     primary: false,

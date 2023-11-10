@@ -1,4 +1,5 @@
 import 'package:al_hadith/state_binders_controller.dart';
+import 'package:al_hadith/ui/screen/bottom_navigation.dart';
 import 'package:al_hadith/ui/screen/home_screen.dart';
 import 'package:al_hadith/ui/uitility/custom_size_extention.dart';
 import 'package:al_hadith/ui/uitility/style.dart';
@@ -25,7 +26,7 @@ class AlHadith extends StatelessWidget {
           primarySwatch: MaterialColor(AppColors.primaryColor.value, AppColors().color),
 
       ),
-      home: HomePage(),
+      home: BottomNavigationScreen(),
     );
   }
 }

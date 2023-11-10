@@ -1,5 +1,6 @@
+import 'package:al_hadith/controller/chapter_controller.dart';
 import 'package:al_hadith/ui/widgets/text_component.dart';
-import 'package:al_hadith/controller/database_controller.dart';
+
 import 'package:al_hadith/ui/uitility/assets_path.dart';
 import 'package:al_hadith/ui/uitility/custom_size_extention.dart';
 import 'package:al_hadith/ui/uitility/style.dart';
