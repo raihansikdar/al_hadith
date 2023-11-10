@@ -46,7 +46,6 @@ class _DashBoardPageState extends State<BottomNavigationScreen> {
         BottomNavigationBarItem(
           label: '',
           icon: SvgPicture.asset(AssetsPath.homeSVG),
-
         ),
 
         BottomNavigationBarItem(
