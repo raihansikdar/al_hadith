@@ -1,5 +1,3 @@
-
-
 import 'package:al_hadith/presentation/utility/custom_size_extention.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +29,6 @@ class Constants{
   Constants._();
 
   /*font start*/
-  static const primaryFont = "Hind Siliguri";
   static const boldFontWeight = FontWeight.w700;
   static const titleFontWeight = FontWeight.w600;
   static const mediumFontWeight = FontWeight.w500;
@@ -41,12 +38,11 @@ class Constants{
 
 /*font size start*/
   static final appbarTitleSize = 20.rh;
-  static const largestFontSize = 32.0;
   static final textFontSize = 18.rh;
-  static const titleFontSize = 22.0;
-  static const k20TitleFontSize = 20.0;
-  static const textSmallFontSize = 16.0;
-  static const k15FontSize = 15.0;
+  static final titleFontSize = 22.rh;
+  static final k20TitleFontSize = 20.rh;
+  static final textSmallFontSize = 16.rh;
+  static final k15FontSize = 15.rh;
   static final k14FontSize = 14.rh;
   static final k12FontSize = 12.rh;
   static const k10FontSize = 10.0;

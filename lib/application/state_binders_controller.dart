@@ -1,5 +1,3 @@
-
-
 import 'package:al_hadith/data/controller/book_controller.dart';
 import 'package:al_hadith/data/controller/chapter_controller.dart';
 import 'package:get/get.dart';

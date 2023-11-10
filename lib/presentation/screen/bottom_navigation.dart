@@ -22,53 +22,51 @@ class _DashBoardPageState extends State<BottomNavigationScreen> {
   ];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: _pages[_currentIndex],
-        bottomNavigationBar: Container(
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topRight: Radius.circular(20),
-              topLeft:Radius.circular(20),
-            )
-          ),
-      
-       height: 56,
-      child: BottomNavigationBar(
-        backgroundColor: Colors.amber,
-        elevation: 4,
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            label: '',
-            icon: SvgPicture.asset(AssetsPath.homeSVG),
-      
-          ),
-      
-          BottomNavigationBarItem(
-            label: '',
-            icon: SvgPicture.asset(AssetsPath.bookSVG),
-          ),
-          BottomNavigationBarItem(
-            label: '',
-            icon: SvgPicture.asset(AssetsPath.listSVG),
-          ),
-          BottomNavigationBarItem(
-            label: '',
-            icon: SvgPicture.asset(AssetsPath.saveSVG),
-          ),
-          BottomNavigationBarItem(
-            label: '',
-            icon: SvgPicture.asset(AssetsPath.profileSVG),
-          ),
-        ],
-      ),
+    return Scaffold(
+      body: _pages[_currentIndex],
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(20),
+            topLeft:Radius.circular(20),
+          )
         ),
+
+     height: 56,
+    child: BottomNavigationBar(
+      backgroundColor: Colors.amber,
+      elevation: 4,
+      currentIndex: _currentIndex,
+      onTap: (index) {
+        setState(() {
+          _currentIndex = index;
+        });
+      },
+      items: [
+        BottomNavigationBarItem(
+          label: '',
+          icon: SvgPicture.asset(AssetsPath.homeSVG),
+
+        ),
+
+        BottomNavigationBarItem(
+          label: '',
+          icon: SvgPicture.asset(AssetsPath.bookSVG),
+        ),
+        BottomNavigationBarItem(
+          label: '',
+          icon: SvgPicture.asset(AssetsPath.listSVG),
+        ),
+        BottomNavigationBarItem(
+          label: '',
+          icon: SvgPicture.asset(AssetsPath.saveSVG),
+        ),
+        BottomNavigationBarItem(
+          label: '',
+          icon: SvgPicture.asset(AssetsPath.profileSVG),
+        ),
+      ],
+    ),
       ),
     );
   }

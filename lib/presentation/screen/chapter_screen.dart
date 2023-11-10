@@ -72,7 +72,7 @@ class _ChapterScreenState extends State<ChapterScreen> {
           ),
           actions: [
             Padding(
-              padding: const EdgeInsets.only(right: 8.0),
+              padding: EdgeInsets.only(right: 8.rh),
               child: SvgPicture.asset(AssetsPath.dothSVG),
             ),
           ],
