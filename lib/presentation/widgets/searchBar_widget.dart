@@ -3,13 +3,17 @@ import 'package:al_hadith/presentation/utility/style.dart';
 import 'package:flutter/material.dart';
 
 class SearchBarWidget extends StatelessWidget {
-  const SearchBarWidget({
+   SearchBarWidget({
     super.key,
   });
-
+TextEditingController _searchValueController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: _searchValueController,
+      onChanged: (String value){
+
+      },
       decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(vertical: 4.rh,horizontal: 16.rh),
           filled: true,

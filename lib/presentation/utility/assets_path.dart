@@ -18,4 +18,9 @@ class AssetsPath{
   static String profileSVG = "assets/icons/profile.svg";
   static String mosquePNG = "assets/icons/mosque.png";
   static String islamicCalligraphyPNG = "assets/icons/islamic_calligraphy.png";
+  static String noDataFoundPNG = "assets/icons/no_data_found.png";
+
+
+
+
 }

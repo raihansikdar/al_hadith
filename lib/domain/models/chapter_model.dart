@@ -1,5 +1,3 @@
-
-
 class ChapterModel {
    int? id;
    int? chapterId;
@@ -14,7 +12,7 @@ class ChapterModel {
      this.chapterId,
      this.bookId,
      this.title,
-    this.hadisRange,
+     this.hadisRange,
      this.number,
      this.bookName,
   });

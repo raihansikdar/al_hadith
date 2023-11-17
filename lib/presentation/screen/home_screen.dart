@@ -56,15 +56,16 @@ class _HomePageState extends State<HomePage> {
           children: [
             Container(
               height: 400.rh,
-              decoration: BoxDecoration(
-                // image: DecorationImage(
-                //   image: AssetImage(
-                //     AssetsPath.islamicCalligraphyPNG,
-                //   ),
-                //   fit: BoxFit.cover,
+              // decoration:  BoxDecoration(
+              //   image: DecorationImage(
+              //     image: AssetImage(
+              //       AssetsPath.islamicCalligraphyPNG,
+              //     ),
+              //     fit: BoxFit.cover,
 
-                // ),
-              ),
+              //   ),
+              // ),
+
               child: Stack(
                 children: [
                   Container(
@@ -132,17 +133,19 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-              padding:  EdgeInsets.all( 16.rh),
+              padding:  EdgeInsets.all( 8.rh),
               child: TextComponent(text: "All Hadith Book",
                   color: AppColors.bookTitleTextColor,
                   fontSize: Constants.k15FontSize,
                   fontWeight: Constants.titleFontWeight,
-                  height: 0.10),
+                  height: 0.0),
             ),
             GetBuilder<BookController>(
               builder: (_bookController) {
                 if(_bookController.isLoading){
-                  return const Center(child: CircularProgressIndicator());
+                  return SizedBox(
+                    height: MediaQuery.of(context).size.height,
+                    child: const Center(child: CircularProgressIndicator()));
                 }
                 return ListView.separated(
                   shrinkWrap: true,

@@ -21,7 +21,7 @@ class BookController extends GetxController {
 
     final db = await DatabaseHelper().database;
     final results = await db.query('books');
-    log(results.toString());
+   // log(results.toString());
     _isLoading = false;
 
 

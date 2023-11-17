@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:al_hadith/domain/database/database_helper.dart';
@@ -7,8 +8,10 @@ import 'package:get/get.dart';
 class ChapterController extends GetxController {
   bool _isLoading = false;
   List<ChapterModel> chapterList = [];
+  List<ChapterModel> _searchList = [];
 
   bool get isLoading => _isLoading;
+  List<ChapterModel> get searchList => _searchList;
 
   Future<bool> fetchChapterListData({required int id}) async {
     _isLoading = true;
@@ -16,9 +19,9 @@ class ChapterController extends GetxController {
 
     final db = await DatabaseHelper().database;
     final results = await db.query('chapter', where: 'book_id = ?', whereArgs: [id]);
-    log(results.toString());
+
+   //log(results.toString());
     _isLoading = false;
-    update();
 
     if (results.isNotEmpty) {
      chapterList.clear();
@@ -26,6 +29,7 @@ class ChapterController extends GetxController {
         final chapterModel = ChapterModel.fromJson(result);
         chapterList.add(chapterModel);
       }
+      _searchList = chapterList;
       update();
       return true;
     } else {
@@ -33,5 +37,17 @@ class ChapterController extends GetxController {
       return false;
     }
   }
+
+  void searchData(String searchValue){
+    if (searchValue.isEmpty){
+      _searchList = chapterList;
+    }else{
+      _searchList = chapterList.where((element) => element.title!.contains(searchValue)).toList();
+
+    }
+    update();
+  }
+
 }
+
 
